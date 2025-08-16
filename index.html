@@ -7,18 +7,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Estas tres líneas estaban rotas/duplicadas; así van bien -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <!-- Tus estilos (incluí .icono dentro del mismo bloque) -->
   <style>
     .icono {
-      font-size: 40px;   /* tamaño del emoji */
-      display: block;    /* ocupa toda la línea */
-      text-align: center;/* centrado horizontal */
-      margin-bottom: 10px; /* espacio con el título */
+      font-size: 40px;
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
     }
 
     body {
@@ -27,7 +25,7 @@
       color: #1A202C;
     }
     .hero-bg {
-      background-image: url('img/hero-mpl.jpg');
+      background-image: url('img/mpl-insignia.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -83,7 +81,7 @@
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0 flex items-center space-x-2">
                     <div class="w-10 h-10 rounded-full flex items-center justify-center">
-                        <img src="img/logo-mpl.jpg" alt="Logo MPL" class="w-full h-full object-contain">
+                        <img src="img/mpl-logo.jpg" alt="Logo MPL" class="w-full h-full object-contain">
                     </div>
                     <a href="#inicio" class="text-white font-black text-xl">
                         <span class="bg-[#C53030] text-white py-1 px-2 rounded-md">MPL</span> Misiones
@@ -136,18 +134,18 @@
                     <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-700">El MPL es más que un sindicato; es un movimiento social nacido en 2010 desde la adversidad, con la misión de transformar el sistema educativo y luchar por una justicia social integral para todos los trabajadores y comunidades de Misiones.</p>
                 </div>
                 <div class="mt-12 grid md:grid-cols-3 gap-8 text-center">
-                    <div class="p-6">
-                        <li><span class="icono">✊</span> Autonomía y Democracia</li>
+                    <div class="p-6 flex flex-col items-center">
+                        <span class="icono">✊</span>
                         <h3 class="mt-4 text-xl font-bold">Autonomía y Democracia</h3>
                         <p class="mt-2 text-gray-700">Nos financiamos con el aporte de nuestros miembros y todas las decisiones se toman en asamblea. Nuestros estatutos prohíben la reelección para garantizar la salud de la organización.</p>
                     </div>
-                    <div class="p-6">
-                        <li><span class="icono">🌍</span> Lucha Integral</li>
+                    <div class="p-6 flex flex-col items-center">
+                        <span class="icono">🌍</span>
                         <h3 class="mt-4 text-xl font-bold">Lucha Integral</h3>
                         <p class="mt-2 text-gray-700">Abrazamos todas las causas: soberanía alimentaria, derechos indígenas, reforma agraria y la lucha antimachista. Entendemos que la liberación pedagógica es holística.</p>
                     </div>
-                    <div class="p-6">
-                        <li><span class="icono">📚</span> Memoria Activa</li>
+                    <div class="p-6 flex flex-col items-center">
+                        <span class="icono">📚</span>
                         <h3 class="mt-4 text-xl font-bold">Memoria Activa</h3>
                         <p class="mt-2 text-gray-700">Nuestras raíces se hunden en las luchas contra la dictadura. Mantenemos viva la memoria territorial como pilar de nuestra identidad y motor de nuestra acción presente.</p>
                     </div>
@@ -175,8 +173,7 @@
                     </div>
                     <div class="carousel-item p-4 sm:p-2">
                         <div class="bg-white rounded-lg shadow-md overflow-hidden h-full">
-                            <!-- Antes: mpl-derechos-postales.jpg (no existe) -->
-                            <img src="img/mpl-infraestructura.jpeg" alt="Noticia 2" class="w-full h-40 object-cover">
+                            <img src="img/mpl-derechos-laborales.jpeg" alt="Noticia 2" class="w-full h-40 object-cover">
                             <div class="p-6">
                                 <h3 class="font-bold text-xl text-black">Marcha provincial por la reforma agraria</h3>
                                 <p class="text-sm text-gray-500 mt-2">15 de Mayo, 2024</p>
@@ -187,7 +184,6 @@
                     </div>
                     <div class="carousel-item p-4 sm:p-2">
                         <div class="bg-white rounded-lg shadow-md overflow-hidden h-full">
-                            <!-- Antes: mpl-cartel.jpg (no existe) -->
                             <img src="img/mpl-corrupcion.jpeg" alt="Noticia 3" class="w-full h-40 object-cover">
                             <div class="p-6">
                                 <h3 class="font-bold text-xl text-black">Denuncia por corrupción en comedores escolares</h3>
@@ -399,7 +395,7 @@
                 <div class="mt-8 flex justify-center space-x-6">
                     <a href="#" class="text-black hover:text-[#C53030]"><span class="sr-only">Facebook</span><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
                     <a href="#" class="text-black hover:text-[#C53030]"><span class="sr-only">Twitter</span><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
-                    <a href="#" class="text-black hover:text-[#C53030]"><span class="sr-only">Instagram</span><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.58 0 9.22.01 8.134.059 7.032.107 6.09.266 5.25 1.008a6.897 6.897 0 00-2.472 2.472C1.007 6.09.266 7.032.107 8.134.01 9.22 0 9.58 0 12s.01 2.78.059 3.866c.048 1.102.217 2.043 1.008 2.885a6.897 6.897 0 002.472 2.472c.84.74 1.782.96 2.885 1.008 1.086.049 1.446.059 3.866.059s2.78-.01 3.866-.059c1.102-.048 2.043-.217 2.885-1.008a6.897 6.897 0 002.472-2.472c.74-.84.96-1.782 1.008-2.885.049-1.086.059-1.446.059-3.866s-.01-2.78-.059-3.866c-.048-1.102-.217-2.043-1.008-2.885A6.897 6.897 0 0018.75 1.008C17.91.266 16.968.107 15.866.059 14.78.01 14.42 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 0 1 0 8z" clip-rule="evenodd" /></svg></a>
+                    <a href="#" class="text-black hover:text-[#C53030]"><span class="sr-only">Instagram</span><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.58 0 9.22.01 8.134.059 7.032.107 6.09.266 5.25 1.008a6.897 6.897 0 00-2.472 2.472C1.007 6.09.266 7.032.107 8.134.01 9.22 0 9.58 0 12s.01 2.78.059 3.866c.048 1.102.217 2.043 1.008 2.885a6.897 6.897 0 002.472 2.472c.84.74 1.782.96 2.885 1.008 1.086.049 1.446.059 3.866.059s2.78-.01 3.866-.059c1.102-.048 2.043-.217 2.885-1.008a6.897 6.897 0 002.472-2.472c.74-.84.96-1.782 1.008-2.885.049-1.086.059-1.446.059-3.866s-.01-2.78-.059-3.866c-.048-1.102-.217-2.043-1.008-2.885A6.897 6.897 0 0018.75 1.008C17.91.266 16.968.107 15.866.059 14.78.01 14.42 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg></a>
                 </div>
             </div>
         </section>
@@ -574,5 +570,3 @@
 
 </body>
 </html>
-
-
