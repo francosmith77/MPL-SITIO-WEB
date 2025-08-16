@@ -1,77 +1,80 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movimiento Pedagógico de Liberación (MPL) | Misiones</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movimiento Pedagógico de Liberación (MPL) | Misiones</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FFFFFF;
-            color: #1A202C;
-        }
-        .hero-bg {
-            background-image: url('img/hero-mpl.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-        }
-        img.emoji { 
-            height: 1em; 
-            width: 1em; 
-            margin: 0 .05em; 
-            vertical-align: -0.1em; 
-        }
-        .card-lucha {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-lucha:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container { height: 350px; }
-        }
-        .carousel-container {
-            overflow-x: auto;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
-            scroll-snap-type: x mandatory;
-        }
-        .carousel-container::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
-        .carousel-item {
-            flex: 0 0 100%;
-            scroll-snap-align: start;
-            transition: transform 0.3s ease-in-out;
-        }
-        @media (min-width: 768px) {
-            .carousel-item { flex: 0 0 33.333333%; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movimiento Pedagógico de Liberación (MPL) | Misiones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Estas tres líneas estaban rotas/duplicadas; así van bien -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Tus estilos (incluí .icono dentro del mismo bloque) -->
+  <style>
+    .icono {
+      font-size: 40px;   /* tamaño del emoji */
+      display: block;    /* ocupa toda la línea */
+      text-align: center;/* centrado horizontal */
+      margin-bottom: 10px; /* espacio con el título */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FFFFFF;
+      color: #1A202C;
+    }
+    .hero-bg {
+      background-image: url('img/hero-mpl.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .text-shadow {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    }
+    img.emoji {
+      height: 1em;
+      width: 1em;
+      margin: 0 .05em;
+      vertical-align: -0.1em;
+    }
+    .card-lucha {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-lucha:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      height: 300px;
+      max-height: 400px;
+    }
+    @media (min-width: 768px) {
+      .chart-container { height: 350px; }
+    }
+    .carousel-container {
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+      scroll-snap-type: x mandatory;
+    }
+    .carousel-container::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
+    .carousel-item {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease-in-out;
+    }
+    @media (min-width: 768px) {
+      .carousel-item { flex: 0 0 33.333333%; }
+    }
+  </style>
 </head>
 <body class="antialiased">
 
@@ -134,17 +137,17 @@
                 </div>
                 <div class="mt-12 grid md:grid-cols-3 gap-8 text-center">
                     <div class="p-6">
-                        <div class="text-5xl text-[#C53030]">🗳️</div>
+                        <li><span class="icono">✊</span> Autonomía y Democracia</li>
                         <h3 class="mt-4 text-xl font-bold">Autonomía y Democracia</h3>
                         <p class="mt-2 text-gray-700">Nos financiamos con el aporte de nuestros miembros y todas las decisiones se toman en asamblea. Nuestros estatutos prohíben la reelección para garantizar la salud de la organización.</p>
                     </div>
                     <div class="p-6">
-                        <div class="text-5xl text-[#C53030]">✊</div>
+                        <li><span class="icono">🌍</span> Lucha Integral</li>
                         <h3 class="mt-4 text-xl font-bold">Lucha Integral</h3>
                         <p class="mt-2 text-gray-700">Abrazamos todas las causas: soberanía alimentaria, derechos indígenas, reforma agraria y la lucha antimachista. Entendemos que la liberación pedagógica es holística.</p>
                     </div>
                     <div class="p-6">
-                        <div class="text-5xl text-[#C53030]">🕯️</div>
+                        <li><span class="icono">📚</span> Memoria Activa</li>
                         <h3 class="mt-4 text-xl font-bold">Memoria Activa</h3>
                         <p class="mt-2 text-gray-700">Nuestras raíces se hunden en las luchas contra la dictadura. Mantenemos viva la memoria territorial como pilar de nuestra identidad y motor de nuestra acción presente.</p>
                     </div>
@@ -571,4 +574,5 @@
 
 </body>
 </html>
+
 
