@@ -1,0 +1,573 @@
+﻿<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimiento Pedagógico de Liberación (MPL) | Misiones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimiento Pedagógico de Liberación (MPL) | Misiones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #1A202C;
+        }
+        .hero-bg {
+            background-image: url('img/hero-mpl.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+        }
+        img.emoji { 
+            height: 1em; 
+            width: 1em; 
+            margin: 0 .05em; 
+            vertical-align: -0.1em; 
+        }
+        .card-lucha {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-lucha:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 350px; }
+        }
+        .carousel-container {
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+            scroll-snap-type: x mandatory;
+        }
+        .carousel-container::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
+        .carousel-item {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            transition: transform 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .carousel-item { flex: 0 0 33.333333%; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="header" class="bg-black/90 backdrop-blur-sm sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center">
+                        <img src="img/logo-mpl.jpg" alt="Logo MPL" class="w-full h-full object-contain">
+                    </div>
+                    <a href="#inicio" class="text-white font-black text-xl">
+                        <span class="bg-[#C53030] text-white py-1 px-2 rounded-md">MPL</span> Misiones
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#quienes-somos" class="text-gray-200 hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Quiénes Somos</a>
+                        <a href="#noticias" class="text-gray-200 hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Noticias</a>
+                        <a href="#nuestras-luchas" class="text-gray-200 hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nuestras Luchas</a>
+                        <a href="#pilares" class="text-gray-200 hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pilares</a>
+                        <a href="#contacto" class="text-gray-200 hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-200 hover:text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#quienes-somos" class="text-gray-200 hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Quiénes Somos</a>
+                <a href="#noticias" class="text-gray-200 hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Noticias</a>
+                <a href="#nuestras-luchas" class="text-gray-200 hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Nuestras Luchas</a>
+                <a href="#pilares" class="text-gray-200 hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pilares</a>
+                <a href="#contacto" class="text-gray-200 hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-bg text-white relative">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col justify-center items-center text-center min-h-[60vh] md:min-h-[80vh]">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase text-shadow">Movimiento pedagógico liberal</h1>
+                <p class="mt-4 max-w-2xl text-lg md:text-xl text-shadow">Más que un sindicato, un movimiento por la dignidad</p>
+                <a href="#pilares" class="mt-8 bg-[#C53030] hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-lg uppercase transition duration-300 transform hover:scale-105">UNIRME A LA LUCHA</a>
+            </div>
+        </section>
+
+        <section id="quienes-somos" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#C53030]">Nuestra Historia, Nuestra Identidad</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-700">El MPL es más que un sindicato; es un movimiento social nacido en 2010 desde la adversidad, con la misión de transformar el sistema educativo y luchar por una justicia social integral para todos los trabajadores y comunidades de Misiones.</p>
+                </div>
+                <div class="mt-12 grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="text-5xl text-[#C53030]">?</div>
+                        <h3 class="mt-4 text-xl font-bold">Autonomía y Democracia</h3>
+                        <p class="mt-2 text-gray-700">Nos financiamos con el aporte de nuestros miembros y todas las decisiones se toman en asamblea. Nuestros estatutos prohíben la reelección para garantizar la salud de la organización.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-5xl text-[#C53030]">??</div>
+                        <h3 class="mt-4 text-xl font-bold">Lucha Integral</h3>
+                        <p class="mt-2 text-gray-700">Abrazamos todas las causas: soberanía alimentaria, derechos indígenas, reforma agraria y la lucha antimachista. Entendemos que la liberación pedagógica es holística.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-5xl text-[#C53030]">??</div>
+                        <h3 class="mt-4 text-xl font-bold">Memoria Activa</h3>
+                        <p class="mt-2 text-gray-700">Nuestras raíces se hunden en las luchas contra la dictadura. Mantenemos viva la memoria territorial como pilar de nuestra identidad y motor de nuestra acción presente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="noticias" class="py-16 md:py-24 bg-[#F8F9FA]">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#C53030]">Últimas Noticias</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-700">Mantente informado sobre nuestras acciones, comunicados y eventos más recientes.</p>
+                </div>
+                <div id="noticias-carousel" class="mt-10 flex snap-x overflow-x-auto carousel-container p-4 -mx-4 md:-mx-0">
+                    <div class="carousel-item p-4 sm:p-2">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden h-full">
+                            <img src="img/mpl-manifestacion.jpg" alt="Noticia 1" class="w-full h-40 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl text-black">Asamblea General por mejoras salariales</h3>
+                                <p class="text-sm text-gray-500 mt-2">20 de Mayo, 2024</p>
+                                <p class="text-gray-700 mt-4 text-sm">Los trabajadores de la educación se reunieron para debatir las próximas acciones en la lucha por un salario digno...</p>
+                                <a href="#" class="mt-4 inline-block text-[#C53030] font-semibold text-sm">Leer más &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item p-4 sm:p-2">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden h-full">
+                            <!-- Antes: mpl-derechos-postales.jpg (no existe) -->
+                            <img src="img/mpl-infraestructura.jpeg" alt="Noticia 2" class="w-full h-40 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl text-black">Marcha provincial por la reforma agraria</h3>
+                                <p class="text-sm text-gray-500 mt-2">15 de Mayo, 2024</p>
+                                <p class="text-gray-700 mt-4 text-sm">El MPL se movilizó en Posadas junto a movimientos campesinos e indígenas para exigir la regularización de tierras...</p>
+                                <a href="#" class="mt-4 inline-block text-[#C53030] font-semibold text-sm">Leer más &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item p-4 sm:p-2">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden h-full">
+                            <!-- Antes: mpl-cartel.jpg (no existe) -->
+                            <img src="img/mpl-corrupcion.jpeg" alt="Noticia 3" class="w-full h-40 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl text-black">Denuncia por corrupción en comedores escolares</h3>
+                                <p class="text-sm text-gray-500 mt-2">10 de Mayo, 2024</p>
+                                <p class="text-gray-700 mt-4 text-sm">El sindicato presentó una denuncia formal ante las autoridades por la falta de fondos y la mala calidad de los alimentos...</p>
+                                <a href="#" class="mt-4 inline-block text-[#C53030] font-semibold text-sm">Leer más &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nuestras-luchas" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#C53030]">Nuestras Luchas Fundamentales</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-700">Nuestras demandas reflejan una visión integral de justicia. Haz clic en cada lucha para conocer más sobre nuestras propuestas y el estado actual de cada reclamo.</p>
+                </div>
+                <div id="luchas-grid" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+            </div>
+        </section>
+
+        <div id="lucha-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
+            <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6 md:p-8">
+                    <div class="flex justify-between items-start">
+                        <h3 id="modal-title" class="text-2xl font-bold text-[#C53030]"></h3>
+                        <button id="close-modal" class="text-gray-500 hover:text-gray-800">&times;</button>
+                    </div>
+                    <p id="modal-description" class="mt-4 text-gray-700"></p>
+                </div>
+            </div>
+        </div>
+
+        <section id="pilares" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#C53030]">Nuestros Pilares: Investigación, Acción y Participación</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-700">Nuestra metodología de trabajo se basa en tres pilares interconectados que guían cada paso que damos como movimiento.</p>
+                </div>
+                <div class="mt-12 grid lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-[#F8F9FA] p-8 rounded-lg shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-[#C53030]">1. Investigación</h3>
+                        <p class="mt-4 text-gray-700">Generamos conocimiento colectivo desde las bases. Analizamos nuestra realidad para fundamentar nuestras luchas con datos y testimonios concretos.</p>
+                        <div class="mt-6">
+                            <h4 class="font-bold text-lg">Salario Básico vs. Canasta Básica</h4>
+                            <p class="text-sm text-gray-500">Este gráfico ilustra la brecha entre el salario básico docente y el costo de vida, una de nuestras principales demandas económicas.</p>
+                            <div class="chart-container mt-4">
+                                <canvas id="salarioChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F8F9FA] p-8 rounded-lg shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-[#C53030]">2. Acción</h3>
+                        <p class="mt-4 text-gray-700">Transformamos la investigación en movilización. Desde huelgas hasta propuestas legislativas, actuamos para conquistar nuestros derechos.</p>
+                        <div class="mt-6 space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg">Campaña Destacada: Hábitat Digno</h4>
+                                <p class="text-sm text-gray-500">Exigimos un plan de vivienda para todos los trabajadores. ¡Tu firma cuenta!</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                    <div class="bg-[#C53030] h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <button class="mt-4 w-full bg-[#C53030] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Firmar la Petición</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Próximos Eventos</h4>
+                                <ul class="mt-2 space-y-2 text-gray-700">
+                                    <li class="flex items-start"><span class="text-[#C53030] mr-2">?</span> <div><strong>Asamblea General:</strong> 20 de Agosto, 10:00hs - Sede Central</div></li>
+                                    <li class="flex items-start"><span class="text-[#C53030] mr-2">?</span> <div><strong>Marcha Provincial:</strong> 28 de Agosto, 09:00hs - Plaza 9 de Julio</div></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F8F9FA] p-8 rounded-lg shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-[#C53030]">3. Participación</h3>
+                        <p class="mt-4 text-gray-700">El MPL lo construimos entre todos. Fomentamos el diálogo, el debate y la toma de decisiones colectiva como corazón de nuestro movimiento.</p>
+                        <div class="mt-6 space-y-4">
+                            <p class="text-gray-700">Tu voz es fundamental. Involúcrate y sé parte de la transformación.</p>
+                             <button class="w-full bg-[#C53030] hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">Quiero Afiliarme</button>
+                             <button class="w-full bg-gray-200 hover:bg-gray-300 text-black font-bold py-3 px-4 rounded-lg transition duration-300">Acceso para Miembros</button>
+                             <button class="w-full bg-gray-200 hover:bg-gray-300 text-black font-bold py-3 px-4 rounded-lg transition duration-300">Enviar una Propuesta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="afiliacion" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#C53030]">Afíliate y Contáctanos</h2>
+                    <p class="mt-3 text-lg text-gray-700">Súmate al MPL en 3 pasos o escríbenos tu consulta. Cuidamos tus datos y te respondemos a la brevedad.</p>
+                </div>
+
+                <div class="mt-10 grid lg:grid-cols-3 gap-8">
+                    <div class="bg-[#F8F9FA] p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-bold text-[#C53030]">¿Cómo afiliarte?</h3>
+                        <ol class="list-decimal ml-5 mt-3 space-y-2 text-gray-700">
+                            <li>Completá el formulario con tus datos.</li>
+                            <li>Si venís de otro gremio, pedí el <a href="#" class="underline">modelo de desafiliación</a>.</li>
+                            <li>Un/a delegado/a te contactará para confirmar el alta.</li>
+                        </ol>
+                        <div class="mt-6 p-4 rounded-md bg-red-50 text-sm text-red-800">
+                            Cuota sugerida: 1% del salario básico (ajustable por asamblea).
+                        </div>
+                        <a href="https://wa.me/5490000000000" target="_blank" rel="noopener"
+                           class="mt-6 inline-flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 px-4 rounded-lg">
+                            Consultar por WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <form id="form-afiliacion" class="grid sm:grid-cols-2 gap-4" novalidate>
+                            <input type="text" name="empresa" id="empresa" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                            <div class="sm:col-span-2">
+                                <h3 class="text-xl font-bold text-[#C53030]">Formulario de afiliación / contacto</h3>
+                            </div>
+
+                            <div>
+                                <label for="dni" class="block text-sm font-medium text-gray-700">DNI *</label>
+                                <input id="dni" name="dni" inputmode="numeric" pattern="^[0-9]{7,9}$" required
+                                       class="mt-1 block w-full rounded-md border-gray-300 focus:border-[#C53030] focus:ring-[#C53030]"
+                                       placeholder="12345678">
+                                <p class="mt-1 text-xs text-gray-500">Solo números, 7 a 9 dígitos.</p>
+                            </div>
+
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre y apellido *</label>
+                                <input id="nombre" name="nombre" required
+                                       class="mt-1 block w-full rounded-md border-gray-300 focus:border-[#C53030] focus:ring-[#C53030]"
+                                       placeholder="Tu nombre completo">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email *</label>
+                                <input id="email" name="email" type="email" required
+                                       class="mt-1 block w-full rounded-md border-gray-300 focus:border-[#C53030] focus:ring-[#C53030]"
+                                       placeholder="tu@correo.com">
+                            </div>
+
+                            <div>
+                                <label for="tel" class="block text sm font-medium text-gray-700">Teléfono *</label>
+                                <input id="tel" name="tel" type="tel" required
+                                       class="mt-1 block w-full rounded-md border-gray-300 focus:border-[#C53030] focus:ring-[#C53030]"
+                                       placeholder="0376 4xxxxx">
+                            </div>
+
+                            <div>
+                                <label for="localidad" class="block text-sm font-medium text-gray-700">Localidad *</label>
+                                <input id="localidad" name="localidad" required
+                                       class="mt-1 block w-full rounded-md border-gray-300 focus:border-[#C53030] focus:ring-[#C53030]"
+                                       placeholder="Eldorado">
+                            </div>
+
+                            <div>
+                                <label for="cargo" class="block text-sm font-medium text-gray-700">Cargo *</label>
+                                <select id="cargo" name="cargo" required
+                                        class="mt-1 block w-full rounded-md border-gray-300 focus:border-[#C53030] focus:ring-[#C53030]">
+                                    <option value="">Seleccioná…</option>
+                                    <option>Maestro/a</option>
+                                    <option>Profesor/a</option>
+                                    <option>Preceptor/a</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje (opcional)</label>
+                                <textarea id="mensaje" name="mensaje" rows="4"
+                                          class="mt-1 block w-full rounded-md border-gray-300 focus:border-[#C53030] focus:ring-[#C53030]"
+                                          placeholder="Contanos lo que quieras"></textarea>
+                            </div>
+
+                            <div class="sm:col-span-2 flex items-start gap-2">
+                                <input id="privacidad" type="checkbox" required class="mt-1">
+                                <label for="privacidad" class="text-sm text-gray-700">
+                                    Acepto la <a href="#" class="underline">política de privacidad</a> y el uso de mis datos para fines gremiales.
+                                </label>
+                            </div>
+
+                            <div class="sm:col-span-2 grid sm:grid-cols-2 gap-3 mt-2">
+                                <button id="btn-enviar"
+                                        class="bg-[#C53030] hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition disabled:opacity-60 disabled:cursor-not-allowed">
+                                    Enviar solicitud
+                                </button>
+                                <a href="mailto:contacto@mpl.org.ar?subject=Afiliación%20MPL"
+                                   class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-3 px-4 rounded-lg text-center">
+                                    Enviar por email
+                                </a>
+                            </div>
+
+                            <p id="form-msg" class="sm:col-span-2 mt-3 text-sm" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#C53030]">¡Ni un paso atrás! Soy MPL.</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-700">Contáctanos, síguenos en nuestras redes y sé parte del cambio. Tu participación es nuestra fuerza.</p>
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="#" class="text-black hover:text-[#C53030]"><span class="sr-only">Facebook</span><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                    <a href="#" class="text-black hover:text-[#C53030]"><span class="sr-only">Twitter</span><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                    <a href="#" class="text-black hover:text-[#C53030]"><span class="sr-only">Instagram</span><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.58 0 9.22.01 8.134.059 7.032.107 6.09.266 5.25 1.008a6.897 6.897 0 00-2.472 2.472C1.007 6.09.266 7.032.107 8.134.01 9.22 0 9.58 0 12s.01 2.78.059 3.866c.048 1.102.217 2.043 1.008 2.885a6.897 6.897 0 002.472 2.472c.84.74 1.782.96 2.885 1.008 1.086.049 1.446.059 3.866.059s2.78-.01 3.866-.059c1.102-.048 2.043-.217 2.885-1.008a6.897 6.897 0 002.472-2.472c.74-.84.96-1.782 1.008-2.885.049-1.086.059-1.446.059-3.866s-.01-2.78-.059-3.866c-.048-1.102-.217-2.043-1.008-2.885A6.897 6.897 0 0018.75 1.008C17.91.266 16.968.107 15.866.059 14.78.01 14.42 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 0 1 0 8z" clip-rule="evenodd" /></svg></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2024 Movimiento Pedagógico de Liberación (MPL) Misiones. Todos los derechos reservados.</p>
+            <p class="mt-1">Construido con la fuerza de los trabajadores de la educación.</p>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // ====== LUCHAS FUNDAMENTALES (6 tarjetas con fotos) ======
+        const luchasData = [
+          {
+            id: 'justicia-economica',
+            icon: '',
+            title: 'Justicia Económica',
+            image: 'img/mpl-manifestacion.jpg',
+            description: 'Exigimos el pago de toda la deuda provincial y nacional con los trabajadores de la educación (Fonid, conectividad, etc.). Demandamos un salario básico de maestra de grado de $160.000 y un piso de garantía salarial de $600.000, con ajustes bimestrales por inflación.'
+          },
+          {
+            id: 'derechos-laborales',
+            icon: '',
+            title: 'Derechos y Dignidad Laboral',
+            image: 'img/mpl-derechos-laborales.jpeg',
+            description: 'Reclamamos el pase a planta de todo el personal de servicios (cocineras y porteros) con una jornada laboral de 6 horas y salarios dignos, equivalentes al 75% del cargo testigo de maestra de grado.'
+          },
+          {
+            id: 'anti-corrupcion',
+            icon: '',
+            title: 'Lucha contra la Corrupción',
+            image: 'img/mpl-corrupcion.jpeg',
+            description: 'Expresamos solidaridad con los trabajadores judicializados por luchar. Exigimos investigación y juicio político a los responsables de actos de corrupción en el sistema educativo y en los servicios del IPS.'
+          },
+          {
+            id: 'infraestructura',
+            icon: '',
+            title: 'Infraestructura y Bienestar',
+            image: 'img/mpl-infraestructura.jpeg',
+            description: 'Denunciamos la falta de fondos para comedores escolares. Exigimos desayuno, almuerzo y merienda de calidad, y la entrega de útiles escolares a niños en escuelas con Necesidades Básicas Insatisfechas (NBI).'
+          },
+          {
+            id: 'justicia-social',
+            icon: '',
+            title: 'Justicia Social Integral',
+            image: 'img/mpl-nande-kokue.jpg',
+            description: 'Demandamos un plan de vivienda para un "Hábitat Digno", la regularización de tierras para comunidades educativas y una Reforma Agraria Integral popular, reconociendo a la escuela "Ñande kokuê" como un ejemplo de conquista.'
+          },
+          {
+            id: 'derechos-indigenas',
+            icon: '',
+            title: 'Derechos Indígenas',
+            image: 'img/mpl-tekoas.jpg',
+            description: 'Reclamamos el reconocimiento de los Auxiliares Docentes Indígenas (ADI) como trabajadores de la educación con salarios equiparables, políticas de capacitación y construcción de escuelas para las Tekoas (comunidades).'
+          }
+        ];
+
+        // Pintar tarjetas de luchas
+        const luchasGrid = document.getElementById('luchas-grid');
+        luchasData.forEach(lucha => {
+          const card = document.createElement('div');
+          card.className = 'card-lucha bg-white rounded-lg shadow-md cursor-pointer text-center border border-gray-200 overflow-hidden';
+          card.dataset.id = lucha.id;
+          card.innerHTML = `
+            <img src="${lucha.image}" alt="${lucha.title}" class="w-full h-40 object-cover">
+            <div class="p-6">
+              <h3 class="mt-2 text-2xl font-bold text-black">${lucha.title}</h3>
+            </div>
+          `;
+          luchasGrid.appendChild(card);
+        });
+
+        // Modal
+        const modal = document.getElementById('lucha-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+
+        luchasGrid.addEventListener('click', (e) => {
+          const card = e.target.closest('.card-lucha');
+          if (card) {
+            const lucha = luchasData.find(l => l.id === card.dataset.id);
+            if (lucha) {
+              modalTitle.textContent = lucha.title;
+              modalDescription.textContent = lucha.description;
+              modal.classList.remove('hidden');
+            }
+          }
+        });
+        closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+
+        // Gráfico (Chart.js)
+        const ctx = document.getElementById('salarioChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Salario Básico Docente', 'Canasta Básica Familiar'],
+            datasets: [{
+              label: 'Monto en ARS',
+              data: [160000, 600000],
+              backgroundColor: ['rgba(197, 48, 48, 0.8)','rgba(26, 32, 44, 0.8)'],
+              borderColor: ['rgba(197, 48, 48, 1)','rgba(26, 32, 44, 1)'],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function(value){ return '$' + value.toLocaleString('es-AR'); }
+                }
+              }
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: function(context){
+                    let label = context.dataset.label ? context.dataset.label + ': ' : '';
+                    if (context.parsed.y !== null) {
+                      label += new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(context.parsed.y);
+                    }
+                    return label;
+                  }
+                }
+              }
+            }
+          }
+        });
+
+        // Menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+      });
+    </script>
+
+    <!-- Twemoji (para que emojis se vean igual en todos lados; Nuestras Luchas no usa emojis) -->
+    <script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        twemoji.parse(document.body, {
+          folder: 'svg',
+          ext: '.svg',
+          base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
+        });
+      });
+    </script>
+    <!-- Script de Google Translate -->
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: 'es', includedLanguages: 'en,pt,fr,it,de', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+          'google_translate_element'
+        );
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
